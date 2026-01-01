@@ -152,7 +152,7 @@ notification:
   # 以下为可选配置（根据需要修改）
   notification_interval: 3600  # 通知间隔(秒)，默认1小时
   notification_time_window: "9:00-21:00"  # 只在指定时间段推送
-  notification_type: "incremental"  # 推送类型："full"(全部)或"incremental"(新增)
+  notification_type: "full"  # 推送类型："full"(全部)或"incremental"(新增)
   
   # 🕐 推送时间窗口控制（可选功能）
   # 用途：限制推送的时间范围，避免非工作时间打扰
