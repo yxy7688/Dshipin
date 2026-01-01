@@ -146,7 +146,14 @@ report:
 # ===============================================================
 notification:
   enabled: true                       # 是否启用通知功能
-
+  enable_notification: true  # 开启通知功能
+  wework: true  # 启用企业微信通知
+  
+  # 以下为可选配置（根据需要修改）
+  notification_interval: 3600  # 通知间隔(秒)，默认1小时
+  notification_time_window: "9:00-21:00"  # 只在指定时间段推送
+  notification_type: "incremental"  # 推送类型："full"(全部)或"incremental"(新增)
+  
   # 🕐 推送时间窗口控制（可选功能）
   # 用途：限制推送的时间范围，避免非工作时间打扰
   # 适用场景：
@@ -169,7 +176,7 @@ notification:
       webhook_url: ""                 # 钉钉机器人 webhook URL
 
     wework:
-      webhook_url: ""                 # 企业微信机器人 webhook URL
+      webhook_url: "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=5f87d2df-8f35-4f7f-991f-55a45aca6796"                 # 企业微信机器人 webhook URL
       msg_type: "markdown"            # 消息类型：markdown(群机器人) | text(个人微信应用)
 
     telegram:
