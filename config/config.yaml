@@ -220,7 +220,7 @@ notification:
 
     wework:
       webhook_url: ""                 # 企业微信机器人 webhook URL
-      msg_type: "text"            # 消息类型：markdown(群机器人) | text(个人微信应用)
+      msg_type: "markdown"            # 消息类型：markdown(群机器人) | text(个人微信应用)
 
     telegram:
       bot_token: ""                   # Telegram Bot Token
@@ -331,7 +331,36 @@ advanced:
   batch_send_interval: 3              # 批次发送间隔（秒）
   feishu_message_separator: "━━━━━━━━━━━━━━━━━━━"
 
-  # 新增关键词匹配范围配置
-  keyword_match:
-    scope: "title+description"  # 可选：title（仅标题）、description（仅描述）、title+description（标题+描述）、full（全文）
-    fuzzy_match: true  # 启用模糊匹配（如“大妈”匹配“广场舞大妈”“小区大妈”）
+# 新增关键词匹配范围配置
+keyword_match:
+  scope: "title+description"  # 可选：title（仅标题）、description（仅描述）、title+description（标题+描述）、full（全文）
+  fuzzy_match: true  # 启用模糊匹配（如“大妈”匹配“广场舞大妈”“小区大妈”）
+    
+# ===============================================================
+# 新增/修改：关键词监控配置（必须添加到配置文件中）
+# ===============================================================
+keywords:
+  enabled: true                       # 确保启用
+  # 🔥 核心修改：扩充关键词列表（越多/越宽泛，匹配的内容越多）
+  list:                               # 监控的关键词（示例，你可根据需求调整）
+    - "老人"
+    - "大爷"
+    - "大妈"
+    - "老年人"
+    - "养生"
+    - "养老"
+    - "健康"
+    - "健身"
+    - "退休"
+    - "养老金"
+    - "退休金"
+    - "广场舞"
+  exclude:                            # 排除无关关键词（可选，减少噪音）
+    - "广告"
+    - "推广"
+    - "抽奖"
+    - "优惠券"
+  # 🔥 可选：放宽匹配规则（如果配置了）
+  match_rule:
+    fuzzy: true                       # 启用模糊匹配（如“科技”匹配“科技新闻”“前沿科技”）
+    case_sensitive: false             # 不区分大小写
