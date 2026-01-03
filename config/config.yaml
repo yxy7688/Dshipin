@@ -26,26 +26,59 @@ app:
 platforms:
   - id: "toutiao"
     name: "今日头条"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "baidu"
     name: "百度热搜"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "wallstreetcn-hot"
     name: "华尔街见闻"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "thepaper"
     name: "澎湃新闻"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "bilibili-hot-search"
     name: "bilibili 热搜"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "cls-hot"
     name: "财联社热门"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "ifeng"
     name: "凤凰网"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "tieba"
     name: "贴吧"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "weibo"
     name: "微博"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "douyin"
     name: "抖音"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   - id: "zhihu"
     name: "知乎"
+    enable: true
+    # 爬取数量（单次最多20条）
+    crawl_count: 20
   
 # ===============================================================
 # 3. 数据源 - RSS 订阅
