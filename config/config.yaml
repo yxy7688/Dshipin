@@ -161,11 +161,11 @@ rss:
 #    • 适用场景：避免重复信息干扰
 # ===============================================================
 report:
-  mode: "current"                     # 可选: daily | current | incremental
-  rank_threshold: 5                   # 排名高亮阈值
+  mode: "daily"                     # 可选: daily | current | incremental
+  rank_threshold: 0                   # 排名高亮阈值
   sort_by_position_first: false       # true=按配置位置排序，false=按热点条数排序
   max_news_per_keyword: 0             # 每个关键词最大显示数量（0=不限制）
-  reverse_content_order: false        # false=热点词汇统计在前，true=新增热点新闻在前
+  reverse_content_order: true        # false=热点词汇统计在前，true=新增热点新闻在前
 
 
 # ===============================================================
@@ -193,9 +193,9 @@ notification:
   wework: true  # 启用企业微信通知
   
   # 以下为可选配置（根据需要修改）
-  notification_interval: 1800  # 通知间隔(秒)，默认1小时
+  notification_interval: 3600  # 通知间隔(秒)，默认1小时
   notification_time_window: "9:00-21:00"  # 只在指定时间段推送
-  notification_type: "incremental"  # 推送类型："full"(全部)或"incremental"(新增)
+  notification_type: "full"  # 推送类型："full"(全部)或"incremental"(新增)
   
   # 🕐 推送时间窗口控制（可选功能）
   # 用途：限制推送的时间范围，避免非工作时间打扰
@@ -208,7 +208,7 @@ notification:
     enabled: true                    # 是否启用推送时间窗口控制
     start: "08:00"                    # 开始时间（北京时间）
     end: "22:00"                      # 结束时间（北京时间）
-    once_per_day: true                # true=窗口内只推送一次，false=窗口内每次执行都推送
+    once_per_day: false                # true=窗口内只推送一次，false=窗口内每次执行都推送
 
   # 推送渠道配置
   channels:
@@ -298,12 +298,13 @@ advanced:
   # 爬虫设置
   crawler:
     enabled: true                     # 是否启用爬取新闻功能
-    request_interval: 3000            # 请求间隔（毫秒）
+    request_interval: 5000            # 请求间隔（毫秒）
     use_proxy: false                  # 是否启用代理
     default_proxy: "http://127.0.0.1:10801"
 
   # RSS 设置
   rss:
+    enable: true
     request_interval: 5000            # 请求间隔（毫秒）
     timeout: 15                       # 请求超时（秒）
     use_proxy: false                  # 是否使用代理
